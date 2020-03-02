@@ -5,18 +5,22 @@
 # Source0 file verified with key 0x102C2C17498D6B9E (i.tkomiya@gmail.com)
 #
 Name     : sphinxcontrib-qthelp
-Version  : 1.0.2
-Release  : 9
-URL      : https://files.pythonhosted.org/packages/0c/f0/690cd10603e3ea8d184b2fffde1d965dd337b87a1d5f7625d0f6791094f4/sphinxcontrib-qthelp-1.0.2.tar.gz
-Source0  : https://files.pythonhosted.org/packages/0c/f0/690cd10603e3ea8d184b2fffde1d965dd337b87a1d5f7625d0f6791094f4/sphinxcontrib-qthelp-1.0.2.tar.gz
-Source1  : https://files.pythonhosted.org/packages/0c/f0/690cd10603e3ea8d184b2fffde1d965dd337b87a1d5f7625d0f6791094f4/sphinxcontrib-qthelp-1.0.2.tar.gz.asc
-Summary  : No summary provided
+Version  : 1.0.3
+Release  : 10
+URL      : https://files.pythonhosted.org/packages/b1/8e/c4846e59f38a5f2b4a0e3b27af38f2fcf904d4bfd82095bf92de0b114ebd/sphinxcontrib-qthelp-1.0.3.tar.gz
+Source0  : https://files.pythonhosted.org/packages/b1/8e/c4846e59f38a5f2b4a0e3b27af38f2fcf904d4bfd82095bf92de0b114ebd/sphinxcontrib-qthelp-1.0.3.tar.gz
+Source1  : https://files.pythonhosted.org/packages/b1/8e/c4846e59f38a5f2b4a0e3b27af38f2fcf904d4bfd82095bf92de0b114ebd/sphinxcontrib-qthelp-1.0.3.tar.gz.asc
+Summary  : sphinxcontrib-qthelp is a sphinx extension which outputs QtHelp document.
 Group    : Development/Tools
 License  : BSD-2-Clause
 Requires: sphinxcontrib-qthelp-license = %{version}-%{release}
 Requires: sphinxcontrib-qthelp-python = %{version}-%{release}
 Requires: sphinxcontrib-qthelp-python3 = %{version}-%{release}
+Requires: flake8
+Requires: mypy
 BuildRequires : buildreq-distutils3
+BuildRequires : flake8
+BuildRequires : mypy
 BuildRequires : pluggy
 BuildRequires : py-python
 BuildRequires : pytest
@@ -25,36 +29,6 @@ BuildRequires : virtualenv
 
 %description
 sphinxcontrib-qthelp is a sphinx extension which outputs QtHelp document.
-
-Home-page: http://sphinx-doc.org/
-Author: Georg Brandl
-Author-email: georg@python.org
-License: BSD
-Download-URL: https://pypi.org/project/sphinxcontrib-qthelp/
-Description: 
-        sphinxcontrib-qthelp is a sphinx extension which outputs QtHelp document.
-        
-Platform: any
-Classifier: Development Status :: 5 - Production/Stable
-Classifier: Environment :: Console
-Classifier: Environment :: Web Environment
-Classifier: Intended Audience :: Developers
-Classifier: Intended Audience :: Education
-Classifier: License :: OSI Approved :: BSD License
-Classifier: Operating System :: OS Independent
-Classifier: Programming Language :: Python
-Classifier: Programming Language :: Python :: 3
-Classifier: Programming Language :: Python :: 3.5
-Classifier: Programming Language :: Python :: 3.6
-Classifier: Programming Language :: Python :: 3.7
-Classifier: Framework :: Sphinx
-Classifier: Framework :: Sphinx :: Extension
-Classifier: Topic :: Documentation
-Classifier: Topic :: Documentation :: Sphinx
-Classifier: Topic :: Text Processing
-Classifier: Topic :: Utilities
-Requires-Python: >=3.5
-Provides-Extra: test
 
 %package license
 Summary: license components for the sphinxcontrib-qthelp package.
@@ -84,15 +58,15 @@ python3 components for the sphinxcontrib-qthelp package.
 
 
 %prep
-%setup -q -n sphinxcontrib-qthelp-1.0.2
-cd %{_builddir}/sphinxcontrib-qthelp-1.0.2
+%setup -q -n sphinxcontrib-qthelp-1.0.3
+cd %{_builddir}/sphinxcontrib-qthelp-1.0.3
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1582919151
+export SOURCE_DATE_EPOCH=1583170567
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
@@ -106,7 +80,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/sphinxcontrib-qthelp
-cp %{_builddir}/sphinxcontrib-qthelp-1.0.2/LICENSE %{buildroot}/usr/share/package-licenses/sphinxcontrib-qthelp/fc88bdd02ddfd29b245693fb34c3a9e6feee3dab
+cp %{_builddir}/sphinxcontrib-qthelp-1.0.3/LICENSE %{buildroot}/usr/share/package-licenses/sphinxcontrib-qthelp/fc88bdd02ddfd29b245693fb34c3a9e6feee3dab
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
