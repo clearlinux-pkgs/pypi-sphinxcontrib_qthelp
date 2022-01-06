@@ -6,7 +6,7 @@
 #
 Name     : sphinxcontrib-qthelp
 Version  : 1.0.3
-Release  : 26
+Release  : 27
 URL      : https://files.pythonhosted.org/packages/b1/8e/c4846e59f38a5f2b4a0e3b27af38f2fcf904d4bfd82095bf92de0b114ebd/sphinxcontrib-qthelp-1.0.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/b1/8e/c4846e59f38a5f2b4a0e3b27af38f2fcf904d4bfd82095bf92de0b114ebd/sphinxcontrib-qthelp-1.0.3.tar.gz
 Source1  : https://files.pythonhosted.org/packages/b1/8e/c4846e59f38a5f2b4a0e3b27af38f2fcf904d4bfd82095bf92de0b114ebd/sphinxcontrib-qthelp-1.0.3.tar.gz.asc
@@ -16,16 +16,12 @@ License  : BSD-2-Clause
 Requires: sphinxcontrib-qthelp-license = %{version}-%{release}
 Requires: sphinxcontrib-qthelp-python = %{version}-%{release}
 Requires: sphinxcontrib-qthelp-python3 = %{version}-%{release}
-Requires: flake8
-Requires: mypy
 BuildRequires : buildreq-distutils3
-BuildRequires : flake8
-BuildRequires : mypy
-BuildRequires : pluggy
-BuildRequires : py-python
-BuildRequires : pytest
-BuildRequires : tox
-BuildRequires : virtualenv
+BuildRequires : pypi(pluggy)
+BuildRequires : pypi(py)
+BuildRequires : pypi(pytest)
+BuildRequires : pypi(tox)
+BuildRequires : pypi(virtualenv)
 
 %description
 sphinxcontrib-qthelp is a sphinx extension which outputs QtHelp document.
@@ -66,7 +62,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1603405000
+export SOURCE_DATE_EPOCH=1641428257
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
