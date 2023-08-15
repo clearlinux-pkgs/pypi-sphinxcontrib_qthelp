@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-sphinxcontrib_qthelp
-Version  : 1.0.5
-Release  : 38
-URL      : https://files.pythonhosted.org/packages/43/7c/188a654c6eecc132b521e8718cc65d8364d89d18ceda2dcfaaecd5c6a5aa/sphinxcontrib_qthelp-1.0.5.tar.gz
-Source0  : https://files.pythonhosted.org/packages/43/7c/188a654c6eecc132b521e8718cc65d8364d89d18ceda2dcfaaecd5c6a5aa/sphinxcontrib_qthelp-1.0.5.tar.gz
+Version  : 1.0.6
+Release  : 39
+URL      : https://files.pythonhosted.org/packages/4f/a2/53129fc967ac8402d5e4e83e23c959c3f7a07362ec154bdb2e197d8cc270/sphinxcontrib_qthelp-1.0.6.tar.gz
+Source0  : https://files.pythonhosted.org/packages/4f/a2/53129fc967ac8402d5e4e83e23c959c3f7a07362ec154bdb2e197d8cc270/sphinxcontrib_qthelp-1.0.6.tar.gz
 Summary  : sphinxcontrib-qthelp is a sphinx extension which outputs QtHelp documents
 Group    : Development/Tools
 License  : BSD-2-Clause
@@ -60,10 +60,10 @@ python3 components for the pypi-sphinxcontrib_qthelp package.
 
 
 %prep
-%setup -q -n sphinxcontrib_qthelp-1.0.5
-cd %{_builddir}/sphinxcontrib_qthelp-1.0.5
+%setup -q -n sphinxcontrib_qthelp-1.0.6
+cd %{_builddir}/sphinxcontrib_qthelp-1.0.6
 pushd ..
-cp -a sphinxcontrib_qthelp-1.0.5 buildavx2
+cp -a sphinxcontrib_qthelp-1.0.6 buildavx2
 popd
 
 %build
@@ -71,7 +71,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1691679152
+export SOURCE_DATE_EPOCH=1692059795
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
