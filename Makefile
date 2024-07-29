@@ -1,5 +1,5 @@
 PKG_NAME := pypi-sphinxcontrib_qthelp
-URL = https://files.pythonhosted.org/packages/a6/67/f5c7df6457315877202f370450acb28626d033822eec1e8163600612b4ef/sphinxcontrib_qthelp-1.0.8.tar.gz
+URL = https://files.pythonhosted.org/packages/68/bc/9104308fc285eb3e0b31b67688235db556cd5b0ef31d96f30e45f2e51cae/sphinxcontrib_qthelp-2.0.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
